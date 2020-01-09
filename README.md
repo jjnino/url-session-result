@@ -1,2 +1,15 @@
 # url-session-result
-A simple wrapper around urlSession data task using the Result type
+A simple generic wrapper around URLSession data task using the Result type
+
+It allows for a cleaner api by returning the expected decoded object or an error. For example, fetching a user might look like:
+
+```
+URLSession.shared.dataTask(with: URL(string: "https://reqres.in/api/users/2")!) { (result: Result<UserData, Error>) in
+    switch result {
+    case .success(let userData):
+        print(userData.data.first_name)
+    case .failure(let error):
+        print(error)
+    }
+}.resume()
+```
