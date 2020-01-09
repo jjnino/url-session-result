@@ -13,3 +13,7 @@ URLSession.shared.dataTask(with: URL(string: "https://reqres.in/api/users/2")!) 
     }
 }.resume()
 ```
+
+
+Check out the playground to give it a try!
+Want to use it? Just copy the URLSession extension into your project!
