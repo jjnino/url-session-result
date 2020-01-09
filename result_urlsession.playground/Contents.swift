@@ -73,6 +73,8 @@ URLSession.shared.dataTask(with: URL(string: "https://reqres.in/api/users/2")!) 
     }
 }.resume()
 
+// prints: Janet
+
 URLSession.shared.dataTask(with: URLRequest(url: URL(string: "https://reqres.in/api/users/3")!)) { (result: Result<UserData, Error>) in
     switch result {
     case .success(let userData):
@@ -81,3 +83,5 @@ URLSession.shared.dataTask(with: URLRequest(url: URL(string: "https://reqres.in/
         print(error)
     }
 }.resume()
+
+// prints: Emma
